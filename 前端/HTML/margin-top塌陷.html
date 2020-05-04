@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>margin-top塌陷</title>
+    <style type="text/css">
+        .con{
+            width: 298px;
+            height: 198px;
+            background-color: gold;
+            /*第一种解决塌陷的方法*/
+            /* border: 1px solid gold; */
+            /* 方法二： */
+            /* overflow: hidden; */
+        }
+        .box{
+            width: 100px;
+            height: 100px;
+            background-color: green;
+            /* magrin-top发生了塌陷，将top值给了父级元素 */
+            margin-top: 50px; 
+        }
+        .clearfix:before{
+            content: "";
+            display: table;
+        }
+    </style>
+</head>
+<body>
+    <div class="con clearfix">
+        <div class="box"></div>
+    </div>
+</body>
+</html>

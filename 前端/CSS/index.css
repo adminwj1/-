@@ -1,0 +1,65 @@
+/* *{
+    margin: 0;
+    padding: 0;
+} */
+div{
+    color: blue; 
+    font-size: 20px; 
+    font-family: 'Microsoft Yahei'; 
+    line-height: 45px;
+    text-indent: 4%;
+}
+/* em{
+    color: red;
+    font-style: italic;
+} */
+span{
+    font-weight: bold;
+}
+h2{
+    /* font-family: 'Microsoft Yahei';
+    font-weight: normal; */
+    text-align: center;
+    font: normal 30px/40px '楷体';
+    color: rgb(255, 0, 0);
+}
+a{
+    text-decoration: none;  /*去掉超链接的下划线*/
+}
+.box{
+    color: red;
+    line-height: 28px;
+}
+.bold{
+    font-weight: bold;
+    font-family: '楷体';
+}
+
+.duanluo em{
+    font-style: normal;
+    color: pink;
+}
+
+
+/* 列表样式设置 */
+.list{
+    list-style: none;
+}
+.list li{
+    height: 30px;
+    color: powderblue;
+}
+.list li a{
+    text-decoration: none;
+    font-family: '楷体';
+}
+
+.a{
+    background-color: green;
+}
+.b{
+    margin: 0 auto;
+    width: 1190px;
+    height: 79px;
+    background-color: red;
+}

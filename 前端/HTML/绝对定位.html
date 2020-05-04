@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>绝对定位</title>
+    <style type="text/css">
+        .con{
+            width: 400px;
+            height: 400px;
+            border: 1px solid #000;
+            margin: 100px auto 0;
+            position: relative;
+        }
+
+        .con div{
+            background-color: gold;
+            width: 200px;
+            height: 100px;
+            margin: 20px;
+            text-align: center;
+            line-height: 100px;
+            font-size: 20px;
+        }
+        body .box01{
+            position: absolute;
+            left: 50px;
+            top: 50px;
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <div class="box01">1</div>
+        <div class="box02">2</div>
+        <div class="box03">3</div>
+    </div>
+</body>
+</html>

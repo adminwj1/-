@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+       .box1:before,.box2:before,.box3:before{
+           font-size: 17px;
+           color: brown;
+            content: "在前的文字 ";
+       }
+       .box1:after,.box2:after,.box3:after{
+           font-size: 17px;
+           color: green;
+            content: " 在后的文字 ";
+       }
+    </style>
+</head>
+<body>
+    <div class="box1">文字001</div>
+    <div class="box2">文字002</div>
+    <div class="box3">文字003</div>
+</body>
+</html>

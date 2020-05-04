@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>班级信息</title>
+</head>
+<body>
+    <h1>班级系列表</h1>
+    <ul>
+    <!--[python04,python05,python06]-->
+       {%for grade in grades%} <!-- 拿到一个models的grades的对象-->
+        <li>
+            <a href="#">{{grade.gname}}</a> <!-- 显示grades对象循环出来的属性-->
+        </li>
+       {%endfor%}  <!-- 结束循环-->
+    </ul>
+</body>
+</html>

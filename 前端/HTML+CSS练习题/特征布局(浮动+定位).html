@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>特征布局(浮动+定位)</title>
+    <style type="text/css">
+        body{
+            margin: 0;
+            padding: 0;
+        }
+        .con{
+            margin: 0;
+            padding: 5px 10px;
+            width: 940px;
+            height: 31px;
+            border: solid 1px #000;
+            text-align: center;
+           
+        }
+        .con li{
+            display: inline-block;
+            vertical-align: middle;
+            /* padding: 5px 10px; */
+            padding: 5px 10px;
+            background-color: gold;
+            text-align: center;
+            font-size: 12px;
+            color: #000;
+            list-style: none;
+            /* line-height: 42px; */
+        }
+        #box{
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+        <ul class="con">
+            <li>上一页</li>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li id="box">...</li>
+            <li>17</li>
+            <li>18</li>
+            <li>19</li>
+            <li>20</li>
+            <li>下一页</li>
+        </ul>
+</body>
+</html>

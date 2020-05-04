@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>清理浮动</title>
+    <style type="text/css">
+        .con, .con2{
+            width: 300px;
+            /* height: 300px; */
+            border: 1px solid #000;
+            margin: 100px auto 0;
+            font-size: 0;/*清除间隙*/
+            /* height: 300px; */
+        }
+        .con a{
+            margin: 10px;
+            width: 50px;
+            height: 50px;
+            display: inline-block;
+            background-color: pink;
+            font-size: 16px;/*清除间隙设置*/
+            text-align: center;
+            line-height: 50px;
+            text-decoration: none;
+        }
+       /*  .con2 {
+            浮动后父元素无法撑开解决方法 
+            第一种方式
+            overflow: hidden; 
+        }*/
+        .clearfix:after{
+            /* after：在元素后后面插入一个空的元素 */
+            /* 清除浮动第三种方式 */
+            content: "";
+            display: table;
+            clear: both;
+            zoom: 1; /*兼容ie*/
+        }
+        /* 清除margin-top和清除浮动二合一 */
+        /* .clearfix:before, .clearfix:after{
+            content: "";
+            display: table;
+        }
+        .clearfix:active{
+            clear: both;
+        }
+        .clearfix{
+            zoom: 1;
+        } */
+
+
+        .con2 a {
+            margin: 10px;
+            width: 50px;
+            height: 50px;
+            /* display: inline-block; */
+            background-color: pink;
+            font-size: 16px;/*清除间隙设置*/
+            text-align: center;
+            line-height: 50px;
+            text-decoration: none;
+            float: left;
+        }
+
+        .con3{
+            width: 300px;
+            border: 1px solid #000;
+            margin: 100px auto 0;
+        }
+
+        .con3 span{
+            background-color: salmon;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="con">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">7</a>
+        <a href="#">8</a>
+        <a href="#">6</a>
+        <a href="#">7</a>
+        <a href="#">8</a>
+        <a href="#">8</a>
+        
+    </div>
+
+
+
+
+    <!-- 浮动设置 -->
+    <div class="con2 clearfix">
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <a href="#">6</a>
+        <a href="#">7</a>
+        <a href="#">8</a>
+        <a href="#">6</a>
+        <a href="#">7</a>
+        <a href="#">8</a>
+        <a href="#">8</a>
+        <!-- 清除浮动第二种方式 -->
+        <!-- <div style="clear: both;"></div> -->
+    </div>
+
+
+    <!-- 行内元素经过浮动后转换成行内块元素，但又不完全是行内块元素 -->
+    <div class="con3 clearfix">
+        <span>span元素</span>
+        <span>span元素</span>
+        <span>span元素</span>
+        <span>span元素</span>
+        <span>span元素</span>
+        <span>span元素</span>
+        <span>span元素</span>
+        <span>span元素</span>
+        <span>span元素</span>
+    </div>
+</body>
+</html>

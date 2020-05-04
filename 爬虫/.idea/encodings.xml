@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/GUI爬取唯美女生/download.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/GUI爬取唯美女生/interface.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/GUI爬取唯美女生/test.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/test.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/下厨房.txt" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/单进程下载电影/决战中途岛.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/唯美女生全站爬取.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/多进程下载电影/多进程下载决战中途岛.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/网络编程/TCP/client.py" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/网络编程/TCP/server.py" charset="UTF-8" />
+    <file url="PROJECT" charset="GBK" />
+  </component>
+</project>

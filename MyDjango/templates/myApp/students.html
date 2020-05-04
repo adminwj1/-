@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>学生信息</title>
+</head>
+<body>
+<h1>学生信息列表</h1>
+    <table>
+        <tr>
+            <th>姓名：</th>
+            <th>年龄：</th>
+            <th>简介：</th>
+            <th>班级：</th>
+        </tr>
+         {%for student in students%}
+        <tr>
+            <td>{{student.sname}}</td>
+            <td>{{student.sage}}</td>
+            <td>{{student.scontend}}</td>
+            <td>{{student.sgrade_id}}</td>
+        </tr>
+        {%endfor%}
+    </table>
+</body>
+</html>

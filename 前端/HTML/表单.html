@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="www.gogoto.top" method="GET">
+        <!-- action：用于提交数据的地址
+            method：设置数据提交的方式
+        -->
+        <div>
+            <label for="username">用户名：</label>
+            <!-- 
+                value：（post传输：在http协议里面提交不会显示出数据内容, get：地址栏传输）
+                    用于传输数据，在地址栏传输域名后面用?号隔开
+            -->
+            <input  type="text" name="username", id="username">
+        </div>
+        <br>
+        <div>
+            <label for="pwd">密码：</label>
+            <input type="password" name="" id="pwd">
+        </div>
+        <br>
+        <div>
+            <label>性别：</label>
+            <input type="radio" name="gender" id="male" value="0">
+            <label for="male">男</label>
+            <input type="radio" name="gender" id="female" value="1">
+            <label for="female">女</label>
+        </div>
+        <br>
+        <div>
+            <label>爱好：</label>
+            <input type="checkbox" name="like" value="game">游戏
+            <input type="checkbox" name="like" value="shopping">逛街
+            <input type="checkbox" name="like" value="sleep">睡觉
+        </div>
+        <br>
+        <div>
+            <label>籍贯：</label>
+            <select name="address">
+                <option value="0">北京</option>
+                <option value="1">上海</option>
+                <option value="2">深圳</option>
+                <option value="3">四川</option>
+            </select>
+        </div>
+        <br>
+        <div>
+            <label>照片：</label>
+            <input type="file" name="">
+        </div>
+        <br>
+        <div>
+            <label>个人描述：</label>
+            <textarea></textarea>
+        </div>
+        <br>
+        <div>
+            <!-- 提交按钮 -->
+            <input type="submit" name="" value="提交">
+            <!-- 重置按钮 -->
+            <input type="reset" name="" value="重置">
+            <!-- 纯按钮 -->
+            <input type="button" name="" value="按钮">
+        </div>
+        <!-- 不会在页面中显示，用于存储数据 -->
+        <input type="hidden" value="10000">
+        <!--用图片的方式做提交功能，但是这个有个bug，会向数据库多次提交数据  -->
+        <!-- <input type="image" name="" src=""> -->
+    </form>
+</body>
+</html>
