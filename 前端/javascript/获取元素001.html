@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 属性写法（"."操作） -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>获取元素001</title>
+    <script type="text/javascript">
+    // 执行下面的语句会出现错误，因为javascript是从上而下执行语句的，当执行下面语句时会出现没有找到title属性
+        // document.getElementById('div1').title="我看到了！";
+        
+        //当整个文档加载玩之后再执行下面的语句
+        window.onload = function(){
+            document.getElementById('div1').title="我看到了！";
+            var oA  = document.getElementById('link1');
+            // document.getElementById('link1').href= "http://www.baidu.com";
+            // document.getElementById('link1').title="去到百度网首页"
+            // 简写方法
+            oA.href = "http://www.baidu.com";
+            oA.title = "去到百度网";
+
+            /*读属性*/
+            alert(oA.id);
+        }
+        
+    </script>
+</head>
+<body>
+    <div id="div1" class="div1" style="color: red;" title="这是div元素，看到了吗？">
+        这是一个div元素
+    </div>
+    <!-- <script type="text/javascript">
+        document.getElementById('div1').title="我看到了！";
+    </script> -->
+    <a href="#" id="link1">百度网</a>
+</body>
+</html>

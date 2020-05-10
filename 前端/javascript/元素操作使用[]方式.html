@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素操作使用[]方式</title>
+    <script type="text/javascript">
+        window.onload = function(){
+            var oDiv = document.getElementById('div1');
+            oDiv.style.color = 'black';
+            var attr = 'background';
+            oDiv.style[attr] = 'red';
+        }
+    </script>
+</head>
+<body>
+    <div id="div1">这是一个div元素</div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+body{
+    background: url(../images/youname.jpg) no-repeat;
+    background-size: cover;
+}
+
+.men{
+    width: 500px;
+    height: 300px;
+    margin: 15% auto;
+    background: #ffffff00;
+    border: 2px solid #fff;
+}
+
+.men h1{
+    font-size: 30px;
+    font-weight: bold;
+    color: #fff;
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.box01, .box02{
+    
+    margin: 0 auto;
+    width: 200px;
+    text-align: center;
+    border-bottom: 2px solid #fff;
+    margin-bottom: 30px;
+}
+
+.box01 input, .box02 input{
+    color: rgb(169, 169, 169);
+    text-indent: 5px;
+    background-color: rgba(169, 169, 169, 0);
+    width: 200px;
+    font-size: 18px;
+    outline: none;
+}
+
+.box03{
+    
+    padding-top: 25px;
+    text-align: center;
+}
+
+button{
+    outline: none;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    width: 250px;
+    height: 30px;
+    border-radius: 15px;
+    cursor: pointer;
+    background-image: linear-gradient(to right,red 0, blue 100%);
+}

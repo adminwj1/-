@@ -1,0 +1,66 @@
+@import url("./reset.css");
+/* 第一层导航栏 */
+body{
+	color: #3C3C3C
+}
+.men{
+	height: 35px;
+	width: 100%;
+	background-color: #f5f5f5;
+	border-bottom: 1px solid #eee;
+}
+
+.box01{
+	width: 1190px;
+	margin: 0 auto;
+	height: 35px;
+	background: #f5f5f5;	
+}
+
+.box01 .box_left a{
+	margin-right: 7px;
+	font-size: 12px;
+	color: #3C3C3C;
+	line-height: 35px;
+}
+
+
+.box01 .box_right li{
+	display: inline-block;
+}
+
+#font_color{
+	color: #f22e00;
+}
+
+.box01 .box_right a {
+	margin-right: 7px;
+	font-size: 12px;
+	color: #3C3C3C;
+	line-height: 35px;
+}
+
+.box01 .box_left a:hover{
+	color: #f22e00;
+}
+
+.box01 .box_right a:hover{
+	color: #f22e00;
+}
+
+
+/* 第二层搜索框 */
+.men02{
+	background-color: #fff;
+}
+
+.men02 .interlayer{
+	padding-top: 24px;
+	height: 97px;
+}
+
+.men02 .interlayer .content{
+	width: 1190px;
+	margin: 0 auto;
+	position: relative;
+}
