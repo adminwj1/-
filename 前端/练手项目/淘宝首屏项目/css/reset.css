@@ -28,7 +28,8 @@ img{border:0;}
 .fr{float:right}
 
 input{
-    border: 0;
+    /* border: 0; */
+    outline-style: none;
 }
 
 button{
