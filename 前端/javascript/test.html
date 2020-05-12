@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>测试文件</title>
+    <style>
+        #box01{
+            width: 200px;
+            height: 200px;
+            background-color: brown;
+        }
+    </style>
+    <script>
+        window.onload = function(){
+            oDox = window.document.getElementById("box01");
+            oDox.style.background = "blue";
+        }
+       
+        window.onload = function(){
+            var oBtn1 = document.getElementById("but01");
+            oBtn1.onclick = btn1;
+            function btn1(){
+                var p1 = document.getElementById('p1');
+                p1.innerHTML = "张芸霐是猪！！";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="box01"></div>
+
+    <button id="but01">点击这里</button>
+    <p id="p1"></p>
+</body>
+</html>

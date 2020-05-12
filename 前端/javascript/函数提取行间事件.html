@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数提取行间事件</title>
+    <link rel="stylesheet" type="text/css" href="./css/1.css" id="links">
+    <script type="text/javascript">
+        window.onload = function(){
+            var oBtn1 = document.getElementById('btn1');    //获取了id为btn1的input标签的属性
+            oBtn1.onclick = Skin_replacement;
+            function Skin_replacement() {
+                var oLink = document.getElementById("links");
+                oLink.href = "./css/2.css";
+            }
+
+            var oBtn1 = document.getElementById('btn2');
+            oBtn1.onclick = Skin_replacement_01;
+            function Skin_replacement_01() {
+                var oLink = document.getElementById("links");
+                oLink.href = "./css/1.css";
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="button" name="" value="skin01" id="btn1">
+    <input type="button" name="" value="skin02" id="btn2">
+    <div class="box01"></div>
+    <div class="box02"></div>
+</body>
+</html>
