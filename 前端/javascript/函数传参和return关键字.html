@@ -7,17 +7,17 @@
     <script>
         window.onload = function(){
             var oDiv = document.getElementById("div1");
-            function changestyle(styl, val){
-                oDiv.style[styl] = val;
-            }
-
-
             changestyle('color', 'red');
             changestyle('background', 'blue');
             changestyle('width', '300px');
             changestyle('height', '300px')
             changestyle('fontSize', '30px')
+            
+            function changestyle(styl, val){
+                oDiv.style[styl] = val;
+            }
         }
+        
     </script>
 </head>
 <body>

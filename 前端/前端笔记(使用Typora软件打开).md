@@ -715,3 +715,500 @@ JavaScript：
 			
 	函数传参--函数return关键字：
 		传参：在给函数传参时，一次性可以传入多个形参但是形参和实参要一一对应，参数与参数之间使用逗号隔开。
+		例如：
+			<head>
+				<title>函数传参和return关键字</title>
+				<script>
+					window.onload = function(){
+						var oDiv = document.getElementById("div1");
+						changestyle('color', 'red');
+						changestyle('background', 'blue');
+						changestyle('width', '300px');
+						changestyle('height', '300px')
+						changestyle('fontSize', '30px')
+						
+						function changestyle(styl, val){
+							oDiv.style[styl] = val;
+						}
+					}
+					
+				</script>
+			</head>
+			<body>
+				<div id="div1">div元素</div>
+			</body>
+			
+	函数return关键字：
+	作用：
+		1、返回函数执行的结果
+		2、结束函数的运行
+		3、阻止默认行为
+		
+	例子代码：
+		<head>
+			<title>函数return关键字</title>
+			<script>
+				window.onload = function(){
+					var oInput01 = document.getElementById("input01");
+					var oInput02 = document.getElementById("input02");
+					var oBtn = document.getElementById("btn");
+					oBtn.onclick = function(){
+						var a = oInput01.value;	//获取input中的value属性
+						var b = oInput02.value;
+						sum = add(a, b);
+						alert(sum);
+					}
+
+					function add(a, b) {
+						var sum = parseInt(a) + parseInt(b);	//parseInt数据类型的转化，将字符串类型转化成整形
+						return sum;
+					}
+				}
+			</script>
+		</head>
+		<body>
+			<input type="text" name="" id="input01">
+			<input type="text" name="" id="input02">
+			<input type="button" name="" value="相加" id="btn">
+
+		</body>
+		
+		
+条件语句：
+	通过条件来控制程序的走向，就需要用到条件语句。
+	if...else
+		例如：styl.display{block/none}显示和隐藏div盒子
+			<head>
+				<meta charset="UTF-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<title>判断语句if_else</title>
+				<style type="text/css">
+					.box{
+						width: 300px;
+						height: 300px;
+						background: gold;
+					}
+				</style>
+				<script type="text/javascript">
+					window.onload = function () {
+						var oBtn = document.getElementById('btn');
+						var oDiv = document.getElementById('box');
+						
+						oBtn.onclick = function(){
+							console.log(oDiv);
+							//这里第一次执行会去行间样式中找style.display，但是行间样式中没有style.display，所以if语句不成立执行else语句，在行间样式中插入style.display属性。第二次执行时就正常执行判断语句
+							// if (oDiv.style.display == "block"){ 
+							if (oDiv.style.display == "block" || oDiv.style.display == ""){
+								oDiv.style.display = "none";
+							}else{
+								oDiv.style.display = "block";
+							}
+						}
+					}
+					
+				</script>
+			</head>
+			<body>
+				<input type="button" name=""  value= "切换" id="btn">
+				<div class="box" id="box"></div>
+			</body>
+	
+	if...else if...else
+		例如：小名补习安排查询
+			<script>
+				var tday = 1;
+				if (tday == 1){
+					alert('语文');
+				}else if (tday == 2){
+					alert('数学');
+				}else if (tday == 3){
+					alert('英语');
+				}else if (tday == 4){
+					alert('美术');
+				}else if (tday == 5){
+					alert('舞蹈');
+				}else{
+					alert('不补习');
+				}
+
+			</script>
+	
+	switch：性能比if多分支要好
+		例如：小名补习安排查询
+			<script>
+				var tday = 5;
+				switch (tday){
+					case 1:
+						alert('语文');
+					break;
+					case 2:
+						alert('数学');
+					break;
+					case 3:
+						alert('英语');
+					break;
+					case 4:
+						alert('美术');
+					break;
+					case 5:
+						alert('舞蹈');
+					break;
+					default:
+						alert('不补习');
+				}
+			</script>
+		
+	运算符：
+		1、算术运算符：+(加)、-(减)、*(乘)、/(除)、%(求余)
+		2、赋值运算符：=、+=、-=、*=、/=、%=
+		3、条件运算符：==、===、>、>=、<、<=、!=、&&(而且)/||(或者)、!(否)
+		
+		
+数组：数组中的数据类型可以不同
+	创建数组的方法：
+		<script>
+			// 面向对象的方式创建数组
+			var aRr = new Array(1,2,3,'abc');
+			// 直接创建，性能比使用面向对象的方式创建的数组性能更高
+			var aRr02 = [1,2,3,'cdf'];
+		</script>
+	数组的基本操作：
+		var aRr02 = [1,2,3,'cdf'];
+
+        // 获取数组中有多少个元素
+        alert(aRr02.length);    //弹出4
+
+        // 获取数组中某个元素，通过下标获取，下标从0开始计数
+        alert(aRr02[3]);    //弹出cdf
+		
+	二维数组： var aRr03 = [[],[],[],[]];
+		var aRr03 = [[1,2,3],['a','b','c'],[true, false]]
+        // 获取数组中有多少个元素
+        alert(aRr03.length);    //弹出3
+
+        // 获取多维数组中某个数组中的元素个数
+        alert(aRr03[0].length);  //弹出3
+
+        // 获取多维数组中某个数组中的元素
+        alert(aRr03[0][0]);     //弹出1
+		
+	数组常用方法：
+	
+		.join()将数组转化成字符串
+        // var sTr = aRr.join(",");
+        // alert(sTr);
+        
+        // .push()在数组最后添加元素
+        aRr.push(5);
+        
+        // .pop()从数组最后删除一个元素
+        aRr.pop();
+        
+
+        // .unshift()从数组前面增加元素
+        aRr.unshift(0);
+
+        // .reverse()数组反转
+        aRr.reverse();
+        alert(aRr)
+       
+        // .indexOf()返回数组中元素第一次出现的索引值
+        var a = aRr.indexOf(1);
+        alert(a);   //弹出3
+
+        // splice()在数组中增加或删除成员
+        // 从第2个元素开始，删除1个元素，然后在此位置增加指定元素
+        var aRr2 = ['a','b','c','d','a','b','c','d'];
+        /*
+        // 删除元素
+        aRr2.splice(2,1);   
+        alert(aRr2);
+        //弹出'a','b','d','a','b','c','d'
+        */
+        
+        /*
+        // 删除后增加新元素
+        aRr2.splice(2,1,'e');
+        alert(aRr2);    //弹出'a','b','e','d','a','b','c','d'
+        */
+
+        aRr2.splice(4,4,'e','f','g','h');
+        alert(aRr2);    //弹出'a','b','c','d','e','f','g','h'
+		
+		
+
+	标签选择器：document.getElementsByTagName('标签');
+	获取的是一个标签选择集
+	基本使用：
+		<script>
+			window.onload = function(){
+				var aLi = document.getElementsByTagName('li');
+				alert(aLi.length);
+
+				// 设置背景色
+				aLi[0].style.backgroundColor = 'gold';
+				aLi[1].style.backgroundColor = 'blue';
+			}
+		</script>
+		
+	解决多个相同标签选择问题：
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>通过标签获取元素</title>
+			<script>
+				window.onload = function(){
+					// 分类选择
+					var oList = document.getElementById('list01');
+					var aLi = oList.getElementsByTagName('li');
+					alert(aLi.length);	//弹出8
+					// 设置背景色
+					aLi[0].style.backgroundColor = 'gold';
+				}
+			</script>
+		</head>
+		<body>
+			<ul id="list01">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>7</li>
+				<li>8</li>
+			</ul>
+
+			<ul id="list02">
+				<li>9</li>
+				<li>10</li>
+				<li>11</li>
+				<li>12</li>
+			</ul>
+		</body>
+		
+循环语句：
+	for循环
+	例子：一次性操作多个标签的属性：
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>for循环</title>
+			<script>
+				window.onload = function(){
+					var oList = document.getElementById('list01');
+					var aLi = oList.getElementsByTagName('li');
+					for(var i=0; i< aLi.length; i++){
+						aLi[i].style.backgroundColor = "gold";
+					}
+				}
+			</script>
+		</head>
+		<body>
+			<ul id="list01">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>7</li>
+				<li>8</li>
+				<li>9</li>
+			</ul>
+		</body>
+			
+	
+	例子：隔行换色
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>for循环</title>
+			<script>
+				window.onload = function(){
+					var oList = document.getElementById('list01');
+					var aLi = oList.getElementsByTagName('li');
+
+					for(var i=0; i< aLi.length; i++){
+						// aLi[i].style.backgroundColor = "gold";
+						if ( i % 2 == 0) {
+							// console.log(i);
+							aLi[i].style.backgroundColor = 'gold';
+						}
+						else{
+							aLi[i].style.backgroundColor = '#f40';
+					   }
+					}
+				}
+			</script>
+		</head>
+		<body>
+			<ul id="list01">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>7</li>
+				<li>8</li>
+				<li>9</li>
+			</ul>
+		</body>
+	
+	
+	
+	数组去重：for循环+indexOf
+		<script type="text/javascript">
+			var aRr = [1,2,3,4,4,5,6,7,8,4,5,4,7,9,3,4,6,8,9,2];
+			var aRr2 = [];
+			for (var i = 0; i< aRr.length; i++){
+				if (aRr.indexOf(aRr[i]) == i){
+					aRr2.push(aRr[i]);
+				}
+			}
+			console.log(aRr2);
+		</script>
+		
+	
+	
+javascript组成：
+	1、ECMAscript javascript的语法（变量、函数、循环语句等语法）
+	2、DOM文档对象模型操作html和css的方法
+	3、BOM浏览器对象模型操作浏览器的一些方法
+	
+字符串处理方法：
+		
+    字符串拼接 +
+		var name = 'Tom';
+        var age = 18;
+        alert('我的名字叫' + name +  '，今年' + age + '岁');
+        在使用+对字符串进行拼接时注意：整形和字符串进行拼接会将整形自动转换为字符串类型然后进行拼接
+        var sum01 = 12;
+        var sum02 = '23';
+        alert( sum01 + sum02);  // 弹出1223
+
+    parseInt()字符串转换成整形
+		var a = 12;
+		var b = '23';
+		var c = 5.6;
+		var d = '123abc';
+		var e = 4.2;
+		alert(parseInt(a) + parseInt(b));
+		alert(parseInt(c));
+		alert(parseInt(d));
+
+    parseFloat()转换成浮点数
+		var c = 5.6;
+		var e = 4.2;
+		alert(parseFloat(c) + parseFloat(e));
+
+	浮点数精度问题：
+		<script>
+			var f = 0.1;
+			var g = 0.2;
+			alert(parseFloat(f) + parseFloat(g));   // 弹出：0.30000000000000004
+		</script>
+	解决方法：*100然后整体/100
+		<script>
+			var f = 0.1;
+			var g = 0.2;
+			alert((parseFloat(f)*100 + parseFloat(g)*100)/100);   // 弹出：0.3
+		</script>
+		
+	split()把一个字符串分隔成字符串组成的数组
+        var sTr = '2016-12-5';
+        var aRr = sTr.split('-');
+        var aRr2 = sTr.split('');
+        console.log(aRr);
+        console.log(aRr2);
+		
+	charAt()获取字符串中的某一个字符
+        var sTr2 = '#div1';
+        var sTr3 = '.div1';
+        var sTr4 = sTr2.charAt(0);
+        if (sTr4 == '#'){
+            alert('id选择器');
+        }else{
+            alert('类选择器')
+        }
+
+    indexOf()查找字符串是否含有某个字符
+        var sTr5 = 'Microsoft yahei';
+        // 判断字符串中是否存在Microsoft，如果存在返回索引，没有查到就返回-1
+        var num = sTr5.indexOf('Microsoft');
+        var num01 = sTr5.indexOf('yahei');
+        var num02 = sTr5.indexOf('xihei');
+        alert(num);
+        alert(num01);
+        alert(num02);   //没有查找到
+
+    substring()截取字符串，用法：substring(start, end)(不包括end)
+        // var sTr6 = sTr5.substring(10,15);
+        var sTr6 = sTr5.substring(10);
+        alert(sTr6);
+    toUpperCase()字符串转大写
+        var sTr7 = "sunck is a good man"
+        var sTr8 = sTr7.toUpperCase()
+        alert(sTr8);
+
+    toLowerCase()字符串转小写
+        alert(sTr8.toLowerCase())
+
+    字符串翻转
+        var sTr9 = '1233asb789asdjal23234';
+        var sTr001 = sTr9.split('').reverse().join('');    //返回一个数组然后使用数组的reverse方法，然后再将数组转换为字符串
+        console.log(sTr001);    // 弹出：43232lajdsa987bsa3321
+
+小练习：计算器
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>计算器</title>
+		<script type="text/javascript">
+			window.onload = function(){
+				var oInpt01 = document.getElementById('input01');
+				var oInpt02 = document.getElementById('input02');
+				var oSum = document.getElementById('sum');
+				var oPt = document.getElementById('opt01');
+				var oBtn = document.getElementById('btn')
+				oBtn.onclick = function(){
+					var a = oInpt01.value;
+					var b = oInpt02.value;
+					var opt = oPt.value;
+					if (opt == '0'){
+						oSum.value = parseInt(a) + parseInt(b);
+					}
+					else if(opt == '1'){
+						oSum.value = parseInt(a) - parseInt(b);
+					}
+					else if(opt == '2'){
+						oSum.value = parseInt(a) * parseInt(b);
+					}
+					else{
+						oSum.value = parseInt(a) / parseInt(b);
+					}
+				}
+			}
+		</script>
+	</head>
+	<body>
+		<h1>计算器</h1>
+		<input type="text" name="" id="input01">
+		<select name="" id="opt01">
+			<!-- 
+				value = 0表示加好
+				1表示：-
+				2表示：*
+				3表示：/
+			-->
+			<option value="0">+</option>
+			<option value="1">-</option>
+			<option value="2">*</option>
+			<option value="3">/</option>
+		</select>
+		<input type="text" name="" id="input02">
+		<span>=</span>
+		<input type="text" name="" id="sum">
+		<button id="btn">计算</button>
+	</body>

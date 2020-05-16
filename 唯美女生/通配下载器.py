@@ -10,6 +10,7 @@ headers = {
         'user-agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/80.0.3987.106 Safari/537.36'
     }
 # https://www.vmgirls.com/13804.html
+# https://www.vmgirls.com/13717.html
 # 需要访问的url
 url = input('请输入URL地址：')
 

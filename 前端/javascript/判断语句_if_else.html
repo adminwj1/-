@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>判断语句if_else</title>
+    <style type="text/css">
+        .box{
+            width: 300px;
+            height: 300px;
+            background: gold;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function () {
+            var oBtn = document.getElementById('btn');
+            var oDiv = document.getElementById('box');
+            
+            oBtn.onclick = function(){
+                console.log(oDiv);
+                //这里第一次执行会去行间样式中找style.display，但是行间样式中没有style.display，所以if语句不成立执行else语句，在行间样式中插入style.display属性。第二次执行时就正常执行判断语句
+                // if (oDiv.style.display == "block"){ 
+                if (oDiv.style.display == "block" || oDiv.style.display == ""){
+                    oDiv.style.display = "none";
+                }else{
+                    oDiv.style.display = "block";
+                }
+            }
+        }
+        
+    </script>
+</head>
+<body>
+    <input type="button" name=""  value= "切换" id="btn">
+    <div class="box" id="box"></div>
+</body>
+</html>

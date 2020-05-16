@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>函数return关键字</title>
+    <script>
+        window.onload = function(){
+            var oInput01 = document.getElementById("input01");
+            var oInput02 = document.getElementById("input02");
+            var oBtn = document.getElementById("btn");
+            oBtn.onclick = function(){
+                var a = oInput01.value;
+                var b = oInput02.value;
+                sum = add(a, b);
+                alert(sum);
+            }
+
+            function add(a, b) {
+                var sum = parseInt(a) + parseInt(b);
+                return sum;
+            }
+        }
+    </script>
+</head>
+<body>
+    <input type="text" name="" id="input01">
+    <input type="text" name="" id="input02">
+    <input type="button" name="" value="相加" id="btn">
+
+</body>
+</html>

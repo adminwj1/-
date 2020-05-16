@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组001</title>
+    <script>
+        // 面向对象的方式创建数组
+        var aRr = new Array(1,2,3,'abc');
+        // 直接创建，性能比使用面向对象的方式创建的数组性能更高
+        var aRr02 = [1,2,3,'cdf'];
+
+        // 获取数组中有多少个元素
+        alert(aRr02.length);    //弹出4
+
+        // 获取数组中某个元素，通过下标获取，下标从0开始计数
+        alert(aRr02[3]);    //弹出cdf
+
+        var aRr03 = [[1,2,3],['a','b','c'],[true, false]]
+        // 获取数组中有多少个元素
+        alert(aRr03.length);    //弹出3
+
+        // 获取多维数组中某个数组中的元素个数
+        alert(aRr03[0].length);  //弹出3
+
+        // 获取多维数组中某个数组中的元素
+        alert(aRr03[0][0]);     //弹出1
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>for循环</title>
+    <script>
+        window.onload = function(){
+            var oList = document.getElementById('list01');
+            var aLi = oList.getElementsByTagName('li');
+
+            for(var i=0; i< aLi.length; i++){
+                // aLi[i].style.backgroundColor = "gold";
+                if ( i % 2 == 0) {
+                    // console.log(i);
+                    aLi[i].style.backgroundColor = 'gold';
+                }
+                else{
+                    aLi[i].style.backgroundColor = '#f40';
+               }
+            }
+        }
+    </script>
+</head>
+<body>
+    <ul id="list01">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+        <li>9</li>
+    </ul>
+</body>
+</html>

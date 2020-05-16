@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>数组常用方法</title>
+    <script>
+        var aRr = [1,2,3,4];
+       
+        // .join()将数组转化成字符串
+        // var sTr = aRr.join(",");
+        // alert(sTr);
+        
+        // .push()在数组最后添加元素
+        aRr.push(5);
+        
+        // .pop()从数组最后删除一个元素
+        aRr.pop();
+        
+
+        // .unshift()从数组前面增加元素
+        aRr.unshift(0);
+
+        // .reverse()数组反转
+        aRr.reverse();
+        alert(aRr)
+       
+        // .indexOf()返回数组中元素第一次出现的索引值
+        var a = aRr.indexOf(1);
+        alert(a);   //弹出3
+
+        // splice()在数组中增加或删除成员
+        // 从第2个元素开始，删除1个元素，然后在此位置增加指定元素
+        var aRr2 = ['a','b','c','d','a','b','c','d'];
+        /*
+        // 删除元素
+        aRr2.splice(2,1);   
+        alert(aRr2);
+        //弹出'a','b','d','a','b','c','d'
+        */
+        
+        /*
+        // 删除后增加新元素
+        aRr2.splice(2,1,'e');
+        alert(aRr2);    //弹出'a','b','e','d','a','b','c','d'
+        */
+
+        aRr2.splice(4,4,'e','f','g','h');
+        alert(aRr2);    //弹出'a','b','c','d','e','f','g','h'
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

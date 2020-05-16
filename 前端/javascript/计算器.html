@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>计算器</title>
+    <script type="text/javascript">
+        window.onload = function(){
+            var oInpt01 = document.getElementById('input01');
+            var oInpt02 = document.getElementById('input02');
+            var oSum = document.getElementById('sum');
+            var oPt = document.getElementById('opt01');
+            var oBtn = document.getElementById('btn')
+            oBtn.onclick = function(){
+                var a = oInpt01.value;
+                var b = oInpt02.value;
+                var opt = oPt.value;
+                if (opt == '0'){
+                    oSum.value = parseInt(a) + parseInt(b);
+                }
+                else if(opt == '1'){
+                    oSum.value = parseInt(a) - parseInt(b);
+                }
+                else if(opt == '2'){
+                    oSum.value = parseInt(a) * parseInt(b);
+                }
+                else{
+                    oSum.value = parseInt(a) / parseInt(b);
+                }
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>计算器</h1>
+    <input type="text" name="" id="input01">
+    <select name="" id="opt01">
+        <!-- 
+            value = 0表示加好
+            1表示：-
+            2表示：*
+            3表示：/
+        -->
+        <option value="0">+</option>
+        <option value="1">-</option>
+        <option value="2">*</option>
+        <option value="3">/</option>
+    </select>
+    <input type="text" name="" id="input02">
+    <span>=</span>
+    <input type="text" name="" id="sum">
+    <button id="btn">计算</button>
+</body>
+</html>
