@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>闭包函数</title>
+    <script>
+        function aa(b){
+            var a = 12;
+            function bb(){
+                alert(a);
+                alert(b);
+            }
+            return bb;
+        }
+
+        var cc = aa(25);
+        cc();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

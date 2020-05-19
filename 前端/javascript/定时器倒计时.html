@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时器时钟</title>
+    <script>
+        window.onload = function(){
+            function timego() {
+                var oDiv = document.getElementById('div1');
+                // 实际开发中此事件从服务器获取
+                var now = new Date();
+                // 指定具体时间，这里的月是0-11所以在当前的月份-1
+                var future = new Date(2020,4,18,24,0,0);
+                var left = parseInt(future - now) / 1000;
+                var day = parseInt(left/86400);
+                var hour = parseInt((left % 86400)/3600);
+                var minute = parseInt(((left % 86400) % 3600)/60);
+                var secont = parseInt(left % 60);
+                // console.log(secont);
+            
+                oDiv.innerHTML = '倒计时：' + todou(day) + '天 ' + todou(hour) + '时' + todou(minute) + '分' + todou(secont) + '秒'
+            }
+            timego();
+            setInterval(timego,1000);
+            
+        }
+        // 单数前面加0
+        function todou(num) {
+            if(num < 10){
+                return '0' + num
+            }
+            else{
+                return num;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

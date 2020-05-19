@@ -467,6 +467,14 @@ HTML5/CSS3
 		
 		
 JavaScript：
+
+	NaN和isNaN：
+		NaN：not a numbe不是数字
+		
+		isNaN：判断是不是数字，不是数字返回true，是数字返回false
+		isNaN() 是一个全局方法，它的作用是检查一个值是否能被 Number() 成功转换 。 如果能转换成功，就返回 false，否则返回 true 。
+	
+	
 	页面行为：部分动画效果、页面与用户的交互、页面功能
 	
 	JavaScript嵌入页面的方式：
@@ -1212,3 +1220,273 @@ javascript组成：
 		<input type="text" name="" id="sum">
 		<button id="btn">计算</button>
 	</body>
+	
+	
+定时器：
+	定时器在javascript中的作用：
+	1、制作动画
+	2、异步操作
+	3、函数缓冲与节流
+	
+setTimeout	只执行一次的定时器
+	注：具体语法使用见setTimeout例子
+clearTimeout	关闭只执行一次的定时器，在某些条件下关闭定时器
+	语句格式：clearTimeout(函数名);
+setInterval	反复执行的定时器
+	<script>
+        var timer = setTimeout(function(){
+            alert('hello!');
+        },3000);
+        clearTimeout(timer);
+
+        var timer2 = setInterval(function(){
+            alert('hi!');
+        }, 2000);
+        clearInterval(timer2);
+    </script>
+clearInterval	关闭反复执行的定时器
+	语法格式：clearInterval(函数名);
+	
+	
+	setTimeout例子：制作一个定时弹框
+		代码：
+			<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>定时器_setTimeout</title>
+			<style type="text/css">
+				.pop_con{
+					display: none;
+				}
+				.pop{
+					/* 弹框 */
+					width: 300px;
+					height: 200px;
+					background-color: #fff;
+					border: 1px solid #000;
+					position: fixed;    /*固定定位*/
+					left: 50%;
+					top: 50%;
+					margin-left: -100px;
+					margin-top: -150px;
+					z-index: 9999;
+				}
+				.mask{
+					/* 弹框下面的大背景盒子 */
+					position: fixed;    /*固定定位后变成行内块元素*/
+					width: 100%;
+					height: 100%;
+					background-color: #000;
+					left: 0;
+					top: 0;
+					opacity: 0.3;    /*遮罩透明*/
+					filter: alpha(opacity=30);    /*IE遮罩透明*/
+					z-index: 9990;
+				}
+			</style>
+			<script>
+				 // setTimeout(myalert,1000);    //setTimeout(函数名,时间)时间单位为：毫秒
+				// function myalert(){
+				//     alert('hello world！');
+				// }
+				window.onload = function(){
+					var oPop = document.getElementById('pop');
+					var oShut = document.getElementById('shutoff');
+
+					// 设置定时器时间和操作的函数
+					// setTimeout(showpop, 1000);
+
+					// function showpop() {
+					//     oPop.style.display = 'block';
+					// }
+					// 简写方式
+					setTimeout(function(){
+						oPop.style.display = 'block';
+					},1000)
+
+					// 关闭弹窗
+					oShut.onclick = function () {
+						oPop.style.display = 'none';
+					}
+						
+					
+				}
+			   
+			</script>
+		</head>
+		<body>
+			<h1>首页标题</h1>
+			<p>页面内容</p>
+			<!-- 自定义弹框 -->
+			<div class="pop_con" id='pop'>
+				<div class="pop">
+					<h3>提示信息！</h3>
+					<a href="#" id="shutoff">关闭</a>
+				</div>
+				<div class="mask"></div>
+			</div>
+		</body>
+	
+
+	setInterval例子：时钟（可实时刷新时间）
+		代码：
+			<head>
+				<meta charset="UTF-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<title>定时器时钟</title>
+				<script>
+					window.onload = function(){
+						var oDiv = document.getElementById('div1');
+						
+						
+						function timego() {
+							var now = new Date();    //js中的Date对象，这里相当于实例化一个对象
+							// console.log(now);
+							var year = now.getFullYear();   // 获取某年
+							var moth = now.getMonth()+1;    // 获取某月。这里.getMonth()方法的月份是从0-11的所有需要在后面+1
+							var date = now.getDate();    // 获取某天
+							var week = now.getDay();    // 获取星期，返回数字（西方时间，星期天为一周的第一天，第一天的值为0）
+							var hour = now.getHours();    // 获取小时
+							var minute = now.getMinutes();    // 获取分钟
+							var second = now.getSeconds();    // 获取秒  
+							oDiv.innerHTML = '当前时间是：' + year + '-' + moth + '-' + date 
+					   + ' ' + toweek(week) + ' ' + todou(hour) + ':' + todou(moth) + ':' + todou(second);
+						}
+						timego();
+						// console.log(year + '-' + moth + '-' + date + '-' + week + '-' + hour + ':' + moth + ':' + second);
+						// 使用定时器使时钟自动走动，或出现停顿1秒的bug，原因是我们设置的是1秒执行一次定时器
+						setInterval(timego,1000);
+					   
+					}
+
+					// 工具函数：获取一个数返回对应的星期
+					function toweek(num) {
+						switch(num){
+							case 0:
+								return '星期天';
+								break;
+							case 1:
+								return '星期一';
+								break;
+							case 2:
+								return '星期二';
+								break;
+							case 3:
+								return '星期三';
+								break;
+							case 4:
+								return '星期四';
+								break;
+							case 5:
+								return '星期五';
+								break;
+							case 6:
+								return '星期六';
+								break;
+						}
+					}
+
+					// 单数前面加0
+					function todou(num) {
+						if(num < 10){
+							return '0' + num
+						}
+						else{
+							return num;
+						}
+					}
+				</script>
+			</head>
+			<body>
+				<div id="div1"></div>
+			</body>
+			
+	活动倒计时例子：
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>定时器时钟</title>
+			<script>
+				window.onload = function(){
+					function timego() {
+						var oDiv = document.getElementById('div1');
+						// 实际开发中此事件从服务器获取
+						var now = new Date();
+						// 指定具体时间，这里的月是0-11所以在当前的月份-1
+						var future = new Date(2020,4,18,24,0,0);
+						var left = parseInt(future - now) / 1000;
+						var day = parseInt(left/86400);
+						var hour = parseInt((left % 86400)/3600);
+						var minute = parseInt(((left % 86400) % 3600)/60);
+						var secont = parseInt(left % 60);
+						// console.log(secont);
+					
+						oDiv.innerHTML = '倒计时：' + todou(day) + '天 ' + todou(hour) + '时' + todou(minute) + '分' + todou(secont) + '秒'
+					}
+					timego();
+					setInterval(timego,1000);
+					
+				}
+				// 单数前面加0
+				function todou(num) {
+					if(num < 10){
+						return '0' + num
+					}
+					else{
+						return num;
+					}
+				}
+			</script>
+		</head>
+		<body>
+			<div id="div1"></div>
+		</body>
+		
+		
+全局变量和局部变量：
+	全局变量-函数外部定义的变量，函数内部和外部都可以访问，它的值可以共享
+	局部变量-函数内部定义的变量，函数内部可以访问，外部无法访问，函数内部访问变量时，现在内部查找是否有此变量，如果有，就使用内部，如果没有，就去外部查找
+	
+封闭函数：
+	定义格式：()():后面那个括号意思是立即执行
+		(function(){....})();
+	代码：
+		<script>
+			(function(){
+				// 不会影响的全局变量，添加新功能时使用比较好，不会影响到项目的其他内容
+				var str = '欢迎访问我的主页！';
+				alert(str);
+			})();
+
+			// 使用变量名的方式定义函数
+			var calc = function myFunction(){
+				alert('hello world!');
+			}
+			
+			// 只能放在函数的后面不能提前
+			calc();
+		</script>
+		
+		
+闭包函数：（未学完）
+	什么是闭包：函数嵌套函数，内部函数可以引用外不含税的参数和变量，参数和变量不会被垃圾回收机制收回
+	例如：
+		<script>
+			function aa(b){
+				var a = 12;
+				function bb(){
+					alert(a);
+					alert(b);
+				}
+				return bb;
+			}
+
+			var cc = aa(25);
+			cc();
+		</script>
+		
+
+内置对象：
+	1、docume
+	document.referrer	//获取上一个跳转页面的地址（需要服务器环境）
+	主要应用在商品购买时程序检测出用户没有登录时自动跳转到登录页面，当用户登录成功后，程序自动跳转回购买商品的页面。

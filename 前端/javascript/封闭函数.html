@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>封闭函数</title>
+    <script>
+        (function(){
+            // 不会影响的全局变量，添加新功能时使用比较好，不会影响到项目的其他内容
+            var str = '欢迎访问我的主页！';
+            alert(str);
+        })();
+
+        // 使用变量名的方式定义函数
+        var calc = function myFunction(){
+            alert('hello world!');
+        }
+        
+        // 只能放在函数的后面不能提前
+        calc();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>轮播图</title>
+    <style>
+        body{
+            padding: 0;
+            margin: 0;
+        }
+
+        .box {
+            position: relative;
+        }
+
+        .list{
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .list li {
+            position: absolute;
+            display: inline-block;
+            width: 600px;
+            height: 200px;
+        }
+
+        li:nth-child(1) {
+            background-color: red;
+        }
+
+        li:nth-child(2) {
+           
+
+            background-color: blue;
+        }
+
+        li:nth-child(3) {
+            background-color: green;
+        }
+
+        li:nth-child(4) {
+            background-color: pink;
+        }
+
+        li:nth-child(5) {
+            background-color: khaki;
+        }
+
+        .listl li {
+            opacity: 0;
+            transition: all .6s;
+            position: absolute;
+        }
+        .item.actve{
+            opacity: 1;
+            z-index: 10;
+        }
+
+        #btn_pr, #btn_next{
+            position: absolute;
+            top: 80px;
+            z-index: 100;
+        }
+
+        #btn_next{
+            left: 100px;
+        }
+        
+        #circleList{
+            z-index: 100;
+            position: absolute;
+            bottom: -200px;
+        }
+
+        .porint{
+            cursor: pointer;
+            color: #fff;
+            text-align: center;
+            font-size: 12px;
+            line-height: 15px;
+            background: rgba(0, 0, 0, .5);
+            display: inline-block;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            border-width: 2px;
+            border-style: solid;
+            border-color: rgba(255, 255, 255, 0.4);
+        }
+
+        .porint.active{
+            background: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+    <script>
+        window.onload = function () {
+            var index = 0;
+            var oItem = document.getElementsByClassName('item');
+            var oPorint = document.getElementsByClassName('porint')
+            var oNext = document.getElementById('btn_next');
+            var oPr = document.getElementById('btn_pr');
+            function goIndex() {
+                for(var i=0; i<oItem.length; i++){
+                    oPorint[i].className = 'porint';
+                    oItem[i].className = 'item';
+                    oPorint[index].className = 'porint active';
+                    oItem[index].className = 'item actve';
+                } 
+            }
+            
+            var goNext = function(){
+                if (index < 4){
+                    index++;
+                }else{
+                    index = 0;
+                }
+                goIndex();
+            }
+
+            var goPr = function(){
+                if (index == 0){
+                    index = 4;
+                }else{
+                    index --;
+                }
+                goIndex()
+            }
+        oNext.addEventListener('click', function(){
+            goNext();
+        });
+
+        oPr.addEventListener('click', function(){
+            goPr();
+        })
+
+        for(var i = 0; i <oPorint.length; i++){
+            oPorint[i].addEventListener('click', function(){
+                var porintIndex = this.getAttribute('data-index');  //获取按钮的data-index属性
+                index = porintIndex;
+                console.log(porintIndex);
+                goIndex();
+            })
+        }
+    }
+    </script>
+</head>
+
+<body>
+    <div class="box">
+        <ul class="list">
+            <li class="item actve">1</li>
+            <li class="item">2</li>
+            <li class="item">3</li>
+            <li class="item">4</li>
+            <li class="item">5</li>
+        </ul>
+        
+        <button id="btn_pr"><</button>
+        <button id="btn_next">></button>
+        <ul id="circleList">
+            <li data-index ="0" class="porint active">1</li>
+            <li data-index ="1" class="porint">2</li>
+            <li data-index ="2" class="porint">3</li>
+            <li data-index ="3" class="porint">4</li>
+            <li data-index ="4" class="porint">5</li>
+        </ul>
+    </div>
+</body>
+</html>

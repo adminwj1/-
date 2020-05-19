@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时器时钟</title>
+    <script>
+        window.onload = function(){
+            var oDiv = document.getElementById('div1');
+            
+            
+            function timego() {
+                var now = new Date();    //js中的Date对象，这里相当于实例化一个对象
+                // console.log(now);
+                var year = now.getFullYear();   // 获取某年
+                var moth = now.getMonth()+1;    // 获取某月。这里.getMonth()方法的月份是从0-11的所有需要在后面+1
+                var date = now.getDate();    // 获取某天
+                var week = now.getDay();    // 获取星期，返回数字（西方时间，星期天为一周的第一天，第一天的值为0）
+                var hour = now.getHours();    // 获取小时
+                var minute = now.getMinutes();    // 获取分钟
+                console.log(minute);
+                var second = now.getSeconds();    // 获取秒  
+                oDiv.innerHTML = '当前时间是：' + year + '-' + moth + '-' + date 
+           + ' ' + toweek(week) + ' ' + todou(hour) + ':' + todou(minute) + ':' + todou(second);
+            }
+            timego();
+            // console.log(year + '-' + moth + '-' + date + '-' + week + '-' + hour + ':' + moth + ':' + second);
+            // 使用定时器使时钟自动走动，或出现停顿1秒的bug，原因是我们设置的是1秒执行一次定时器
+            setInterval(timego,1000);
+           
+        }
+
+        // 工具函数：获取一个数返回对应的星期
+        function toweek(num) {
+            switch(num){
+                case 0:
+                    return '星期天';
+                    break;
+                case 1:
+                    return '星期一';
+                    break;
+                case 2:
+                    return '星期二';
+                    break;
+                case 3:
+                    return '星期三';
+                    break;
+                case 4:
+                    return '星期四';
+                    break;
+                case 5:
+                    return '星期五';
+                    break;
+                case 6:
+                    return '星期六';
+                    break;
+            }
+        }
+
+        // 单数前面加0
+        function todou(num) {
+            if(num < 10){
+                return '0' + num
+            }
+            else{
+                return num;
+            }
+        }
+    </script>
+</head>
+<body>
+    <div id="div1"></div>
+</body>
+</html>

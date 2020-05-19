@@ -15,6 +15,14 @@
                 var a = oInpt01.value;
                 var b = oInpt02.value;
                 var opt = oPt.value;
+                if (a == "" || b == ""){
+                    alert("输入框不能为空！！！");
+                    return
+                }
+                if (isNaN(a) || isNaN(b)){
+                    alert("请输入数字！！")
+                    return
+                }
                 if (opt == '0'){
                     oSum.value = parseInt(a) + parseInt(b);
                 }

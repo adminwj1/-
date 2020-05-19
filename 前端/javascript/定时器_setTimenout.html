@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时器_setTimeout</title>
+    <style type="text/css">
+        .pop_con{
+            display: none;
+        }
+        .pop{
+            /* 弹框 */
+            width: 300px;
+            height: 200px;
+            background-color: #fff;
+            border: 1px solid #000;
+            position: fixed;    /*固定定位*/
+            left: 50%;
+            top: 50%;
+            margin-left: -100px;
+            margin-top: -150px;
+            z-index: 9999;
+        }
+        .mask{
+            /* 弹框下面的大背景盒子 */
+            position: fixed;    /*固定定位后变成行内块元素*/
+            width: 100%;
+            height: 100%;
+            background-color: #000;
+            left: 0;
+            top: 0;
+            opacity: 0.3;    /*遮罩透明*/
+            filter: alpha(opacity=30);    /*IE遮罩透明*/
+            z-index: 9990;
+        }
+    </style>
+    <script>
+         // setTimeout(myalert,1000);    //setTimeout(函数名,时间)时间单位为：毫秒
+        // function myalert(){
+        //     alert('hello world！');
+        // }
+        window.onload = function(){
+            var oPop = document.getElementById('pop');
+            var oShut = document.getElementById('shutoff');
+
+            // 设置定时器时间和操作的函数
+            // setTimeout(showpop, 1000);
+
+            // function showpop() {
+            //     oPop.style.display = 'block';
+            // }
+            // 简写
+            setTimeout(function(){
+                oPop.style.display = 'block';
+            },1000)
+
+            // 关闭弹窗
+            oShut.onclick = function () {
+                oPop.style.display = 'none';
+            }
+                
+            
+        }
+       
+    </script>
+</head>
+<body>
+    <h1>首页标题</h1>
+    <p>页面内容</p>
+    <!-- 自定义弹框 -->
+    <div class="pop_con" id='pop'>
+        <div class="pop">
+            <h3>提示信息！</h3>
+            <a href="#" id="shutoff">关闭</a>
+        </div>
+        <div class="mask"></div>
+    </div>
+</body>
+</html>

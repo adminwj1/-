@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>定时器跳转页面</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        .redis{
+            margin: 0 auto;
+            width: 300px;
+            height: 400px;
+            background-color: #f4f4f4;
+
+        }
+        span{
+            color: #fff;
+            text-align: center;
+            width: 60px;
+            height: 20px;
+            background-color: red;
+            border-radius: 30px;
+            float: right;
+        }
+    </style>
+    <script>
+        function run() {
+            var s = document.getElementById('dd');
+            if (s.innerHTML == 0){
+                // window.location.href = "http://www.baidu.com";   //跳转页面，延迟较大
+                clearInterval(run());
+            }
+            s.innerHTML = s.innerHTML -1;
+        }
+            setInterval("run();", 1000);
+    </script>
+</head>
+<body>
+
+        <div class="redis" id="redis">
+            <span id="dd">5</span>
+        </div>
+
+</body>
+
+</html>
