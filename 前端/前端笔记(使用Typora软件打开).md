@@ -1466,7 +1466,20 @@ clearInterval	关闭反复执行的定时器
 			// 只能放在函数的后面不能提前
 			calc();
 		</script>
-		
+	在写封闭函数时要注意结束后要写分号，否则程序在执行时会认为是一个程序进行执行。	
+		例如：这里执行的结果是输出的：test01，原因就是匿名函数aa结束没有加分号
+			<script>
+				var aa = function(){
+					console.log("test01");
+				}
+				(function(){
+					var aa = function(){
+						console.log('test02');
+					}
+					aa();
+				})()
+				aa();
+			</script>
 		
 闭包函数：（未学完）
 	什么是闭包：函数嵌套函数，内部函数可以引用外不含税的参数和变量，参数和变量不会被垃圾回收机制收回
@@ -1485,8 +1498,277 @@ clearInterval	关闭反复执行的定时器
 			cc();
 		</script>
 		
+	封闭函数简写闭包：
+		<script>
+			// 封闭函数简写
+			var wq = (function(n){
+				var b = 3;
+				function bb(){
+					console.log(n);
+					
+					b++;
+					console.log(b);
+				}
+				return bb;
+			})(2);
 
+			wq();   // 2  4
+			wq();   // 2  5
+		</script>
 内置对象：
 	1、docume
 	document.referrer	//获取上一个跳转页面的地址（需要服务器环境）
 	主要应用在商品购买时程序检测出用户没有登录时自动跳转到登录页面，当用户登录成功后，程序自动跳转回购买商品的页面。
+	
+	2、location
+	window.location.href	//获取或者重定URL地址
+	
+	window.location.search	//获取地址参数部分
+		例如：search在URL地址后面根?id=
+			<head>
+				<meta charset="UTF-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1.0">
+				<title>内置对象_location</title>
+				<script>
+					window.onload =function(){
+						var Dat = window.location.search;
+						var oSpan = document.getElementById('span01')
+						var arr = Dat.split('=');
+						console.log(arr);
+						var name = arr[1];
+						oSpan.innerHTML = name;
+					}
+					
+				</script>
+			</head>
+			<body>
+				<div>欢迎<span id="span01"></span>,访问我的主页</div>
+			</body>
+			
+	window.location.hash	//获取页面锚点或者叫哈希值
+		例如：url地址栏后面跟#
+			<script>
+				window.onload =function(){
+					var hash = window.location.hash;
+					console.log(hash);
+				}
+			</script>
+	
+	3、Math
+		Math.random		获取0-1的随机数
+		Math.floor		向下取整
+		Math.ceil		向上取整
+		例如：
+			<script>
+				// 0-1之间的随机数
+				var num = Math.random();
+				console.log(num);
+				// 选定范围的随机数
+				var a = 10;
+				var b = 20;
+				var num1 = Math.random()*(b-a)+a;
+				console.log(num1);
+				// 存10个值
+				var arr = [];
+				for(var i=0;i<10;i++){
+					// 向下取整，加个1就可以取到20
+					var num2 =Math.floor(Math.random()*(b-a+1)+a);
+					arr.push(num2)
+					
+				}
+				console.log(arr);
+			</script>
+	
+
+
+面向对象：
+	面向对象，是一种思想，许多功能实现已经编写好了，在使用时，只需要关注功能的运用，而不需要这个功能的具体实现过程。
+	javascript对象：
+		将相关的变量和函数组合成一个整体，这个整体叫做对象，对象中的变量叫做属性，变量中的函数叫做方法，javascript中的对象类似字典。
+	创建对象的方法：
+		1、单体：
+			例如：
+			   <script>
+					// 创建对象的方法
+					// 1、单体：对象直接量的方式
+					var Tom = {
+						// 属性
+						name: 'tom',
+						age:18,
+
+						// 方法
+						showname:function(){
+							// this：实例的本身
+							console.log(this.name);
+						},
+
+						showage:function(){
+							console.log(this.age);
+						},
+					}
+
+
+					//使用属性和方法
+					console.log(Tom.name);
+					console.log(Tom.age);
+
+					// 使用方法
+					Tom.showname();
+				</script>
+		
+		2、工厂模式：通过一个函数来创建对象，使用内置的Object创建一个共对象进行装饰这个空对象
+			例如：
+			    <script>
+					function Person(name, age, job){
+						var o = new Object();   // 使用js中自带的Object创建一个空对象
+						// 也可以写成：var o = {};
+
+						// 添加属性
+						o.name = name;
+						o.age = age;
+						o.job = job;
+						// 添加方法
+						o.showname = function(){
+							console.log(this.name);
+						}
+
+						o.showage = function(){
+							console.log(this.age);
+						}
+
+						o.showjob = function(){
+							console.log(this.job);
+						}
+						return o
+					}
+
+					var Tom = Person('tom', 18, 'pythoner');
+					Tom.showjob();
+				</script>
+	
+	
+		3、构造函数：
+			例如：
+				<script type="text/javascript">
+					function Person(name, age, job){
+						// 这里的this是：未来实例化的对象
+						// 方法重复创建，不共享，浪费资源
+						this.name = name;
+						this.age = age;
+						this.job = job;
+						this.showname = function(){
+							console.log(this.name);
+						}
+
+						this.showage = function(){
+							console.log(this.age);
+						}
+
+						this.showjob = function(){
+							console.log(this.job);
+						}
+					}
+					var Tom = new Person('tom', 18, 'enginerr');
+					var Jack = new Person('Jack', 19, 'worker');
+					Tom.showjob();
+					console.log(Tom.showname == Jack.showname);     //返回fals
+				</script>
+			
+		4、原型模式：prototype（共享实例化方法）最终比较好的方式
+			例如：
+			
+	继承：
+		call和apply：
+			call和apply是改变当前函数里面执行的this，区别：call在参数前面添加一个改变this的值，后面的参数直接写，apply：第一个参数写改变this的值，后面的参数使用数组
+		例如：
+		    <script>
+				function aa(a,b){
+					console.log('我的this是' + this + ',我的a是' + a + ',我的b是'+b);
+				}
+				/*
+					call和apply是改变当前函数里面执行的this，区别：call在参数前面添加一个改变this的值，后面的参数直接写，
+					apply：第一个参数写改变this的值，后面的参数使用数组
+				*/
+				//aa.call('abc',2,3);     //结果为：我的this是abc,我的a是2,我的b是3
+				aa.apply('abc',[2,3]);      //结果为：我的this是abc,我的a是2,我的b是3
+			</script>
+	
+		基础例子：
+			<script>
+				function Fclass(name, age){
+					this.name = name;
+					this.age = age;
+				}
+
+				Fclass.prototype.showname = function(){
+					console.log(this.name);
+				}
+
+				Fclass.prototype.showage = function(){
+					console.log(this.age);
+				}
+
+				// 属性用call或者apply的方式来继承
+				function Sclass(name, age, job){
+					// call改变当前执行的this
+					// 子函数中调用父函数，this表示Sclass实例化的对象，父函数实例化的属性指到的是子函数实例化的对象
+					// 将父类的属性赋值给子类的对象
+					Fclass.call(this, name, age);
+					// 继承属性
+					this.job = job;
+				}
+				// 继承方法；将父类的一个实例赋值给子类的原型属性
+				Sclass.prototype = new Fclass();
+			   
+				// 自定义showjob方法
+				Sclass.prototype.showjob = function(){
+					console.log(this.job);
+				}
+
+				var Tom = new Sclass('tom', 18, 'engineer');
+
+				Tom.showname();
+				Tom.showage();
+				Tom.showjob();
+			</script>
+新选择器：
+	1、document.querySelector();
+	
+	2、document.querySelectorAll();
+	例如：
+		<head>
+			<meta charset="UTF-8">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<title>新增选择器</title>
+			<script>
+				window.onload = function(){
+					// 选择单个
+					var oDiv = document.querySelector('#div');
+					alert(oDiv);
+
+					// 选择多个，类似于样式的写法
+					var aLi = document.querySelectorAll('.list li');
+					alert(aLi.length);      // 弹出结果为：8
+				}
+				
+			</script>
+		</head>
+		<body>
+			<div id="div">这是一个div元素</div>
+			<ul class="list">
+				<li>1</li>
+				<li>2</li>
+				<li>3</li>
+				<li>4</li>
+				<li>5</li>
+				<li>6</li>
+				<li>7</li>
+				<li>8</li>
+			</ul>
+		</body>
+	
+	
+jQuery介绍：
+
+	
+	

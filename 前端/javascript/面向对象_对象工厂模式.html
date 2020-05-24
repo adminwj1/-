@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>面向对象创建对象——工厂模式</title>
+    <script>
+        function Person(name, age, job){
+            var o = new Object();   // 使用js中自带的Object创建一个空对象
+            // 也可以写成：var o = {};
+
+            // 添加属性
+            o.name = name;
+            o.age = age;
+            o.job = job;
+
+            o.showname = function(){
+                console.log(this.name);
+            }
+
+            o.showage = function(){
+                console.log(this.age);
+            }
+
+            o.showjob = function(){
+                console.log(this.job);
+            }
+            return o
+        }
+
+        var Tom = Person('tom', 18, 'pythoner');
+        Tom.showjob();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

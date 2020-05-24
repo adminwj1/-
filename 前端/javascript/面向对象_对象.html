@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>面向对象_对象-单体</title>
+    <script>
+        // 创建对象的方法
+        // 1、单体：对象直接量的方式
+        var Tom = {
+            // 属性
+            name: 'tom',
+            age:18,
+
+            // 方法
+            showname:function(){
+                // this：实例的本身
+                console.log(this.name);
+            },
+
+            showage:function(){
+                console.log(this.age);
+            },
+        }
+
+
+        //使用属性和方法
+        console.log(Tom.name);
+        console.log(Tom.age);
+
+        // 使用方法
+        Tom.showname();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

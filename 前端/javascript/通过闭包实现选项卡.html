@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>通过闭包实现选项卡</title>
+    <style type="text/css">
+    body{
+        margin: 0;
+    }
+        .btns{
+            width: 500px;
+            height: 50px;
+            font-size: 0;
+        }
+
+        .btns input{
+           outline: none;
+            margin-right: 4px;
+            font-size: 15px;
+            width: 100px;
+            height: 50px;
+            background-color: #ddd;
+            /* line-height: 50px; */
+            color: #666;
+            border: 0;
+            cursor: pointer;
+        }
+        .btns input.cur{
+            background-color: gold;
+        }
+
+        .contents div{
+            width: 500px;
+            height: 200px;
+            background-color: gold;
+            display: none;
+            line-height: 200px;
+            text-align: center;
+        }
+
+        .contents div.active{
+            display: block;
+        }
+    </style>
+    <script type="text/javascript">
+        window.onload = function(){
+            var aBtn = document.getElementById('btns').getElementsByTagName('input');
+            // TagName：获取标签名
+            var aCon = document.getElementById('contents').getElementsByTagName('div');
+            console.log(aCon.length);
+
+            
+                for(var i=0; i<aBtn.length; i++){
+                    // 将索引值保存下来传入到闭包函数中
+                    (function(i){
+                        aBtn[i].onclick = function(){
+                            // this:当前
+                            for(var j=0;j<aBtn.length;j++){
+                                // 将三个按钮全部变成默认样式
+                                aBtn[j].className = '';
+                                aCon[j].className = '';
+                            }
+                            this.className = 'cur';     //将cur 赋值给当前点击的className
+                            aCon[i].className = 'active';   // 获取i的索引值
+                        };
+                    })(i);
+                }
+            }
+    </script>
+</head>
+<body>
+    <div class="btns" id="btns">
+        <input type="button" value="tab01" class="cur">
+        <input type="button" value="tab02">
+        <input type="button" value="tab03">
+    </div>
+
+    <div class="contents" id="contents">
+        <div class="active">tab文字内容一</div>
+        <div>tab文字内容二</div>
+        <div>tab文字内容三</div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>面向对象_对象-构造函数</title>
+    <script type="text/javascript">
+        function Person(name, age, job){
+            // 这里的this是：未来实例化的对象
+            // 方法重复创建，不共享，浪费资源
+            this.name = name;
+            this.age = age;
+            this.job = job;
+            
+            this.showname = function(){
+                console.log(this.name);
+            }
+
+            this.showage = function(){
+                console.log(this.age);
+            }
+
+            this.showjob = function(){
+                console.log(this.job);
+            }
+        }
+        var Tom = new Person('tom', 18, 'enginerr');
+        var Jack = new Person('Jack', 19, 'worker');
+        Tom.showjob();
+        console.log(Tom.showname == Jack.showname);     //返回fals
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内置对象_Math</title>
+    <script>
+        // 0-1之间的随机数
+        var num = Math.random();
+        console.log(num);
+        // 选定范围的随机数
+        var a = 10;
+        var b = 20;
+        var num1 = Math.random()*(b-a)+a;
+        console.log(num1);
+        // 存10个值
+        var arr = [];
+        for(var i=0;i<10;i++){
+            // 向下取整，加个1就可以取到20
+            var num2 =Math.floor(Math.random()*(b-a+1)+a);
+            arr.push(num2)
+            
+        }
+        console.log(arr);
+   </script>
+</head>
+<body>
+    
+</body>
+</html>

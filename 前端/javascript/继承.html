@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>继承</title>
+    <script>
+        function Fclass(name, age){
+            this.name = name;
+            this.age = age;
+        }
+
+        Fclass.prototype.showname = function(){
+            console.log(this.name);
+        }
+
+        Fclass.prototype.showage = function(){
+            console.log(this.age);
+        }
+
+        // 属性用call或者apply的方式来继承
+        function Sclass(name, age, job){
+            // call改变当前执行的this
+            // 子函数中调用父函数，this表示Sclass实例化的对象，父函数实例化的属性指到的是子函数实例化的对象
+            // 将父类的属性赋值给子类的对象
+            Fclass.call(this, name, age);
+            // 继承属性
+            this.job = job;
+        }
+        // 继承方法；将父类的一个实例赋值给子类的原型属性
+        Sclass.prototype = new Fclass();
+       
+        // 自定义showjob方法
+        Sclass.prototype.showjob = function(){
+            console.log(this.job);
+        }
+
+        var Tom = new Sclass('tom', 18, 'engineer');
+
+        Tom.showname();
+        Tom.showage();
+        Tom.showjob();
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

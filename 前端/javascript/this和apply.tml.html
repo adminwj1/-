@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>this和apply</title>
+    <script>
+        function aa(a,b){
+            console.log('我的this是' + this + ',我的a是' + a + ',我的b是'+b);
+        }
+        /*
+            call和apply是改变当前函数里面执行的this，区别：call在参数前面添加一个改变this的值，后面的参数直接写，
+            apply：第一个参数写改变this的值，后面的参数使用数组
+        */
+        //aa.call('abc',2,3);     //结果为：我的this是abc,我的a是2,我的b是3
+        aa.apply('abc',[2,3]);      //结果为：我的this是abc,我的a是2,我的b是3
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

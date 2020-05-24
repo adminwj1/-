@@ -1,0 +1,63 @@
+body{
+    margin: 0;
+}
+#men{
+    position: relative;
+}
+
+.list{
+    margin: 0;
+    list-style: none;
+    padding: 0;
+}
+
+.list li{
+    width: 500px;
+    height: 300px;
+    color: #fff;
+    position: absolute;
+    line-height: 300px;
+    text-align: center;
+    background-color: pink;
+    border: 1px solid #fff;
+}
+
+.item.active{
+    z-index: 10;
+}
+
+#next, #previous{
+    position: absolute;
+    z-index: 100;
+}
+
+#next{
+    left: 100px;
+}
+
+
+#circleList{
+    z-index: 100;
+    position: absolute;
+    bottom: -315px;
+    left: 139px;
+
+}
+.print{
+    cursor: pointer;
+    color: #fff;
+    text-align: center;
+    font-size: 12px;
+    line-height: 15px;
+    background: rgba(0, 0, 0, .5);
+    display: inline-block;
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border-width: 2px;
+    border-style: solid;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+.print.active{
+    background: rgba(255, 255, 255, 0.2);
+}

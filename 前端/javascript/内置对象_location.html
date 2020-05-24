@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>内置对象_location</title>
+    <script>
+        window.onload =function(){
+            var Dat = window.location.search;
+            var hash = window.location.hash;
+            var oSpan = document.getElementById('span01')
+            var arr = Dat.split('=');
+            console.log(arr);
+            var name = arr[1];
+            oSpan.innerHTML = name;
+            console.log(hash);
+        }
+        
+    </script>
+</head>
+<body>
+    <div>欢迎<span id="span01"></span>,访问我的主页</div>
+</body>
+</html>

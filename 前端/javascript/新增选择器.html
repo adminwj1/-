@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>新增选择器</title>
+    <script>
+        window.onload = function(){
+            // 选择单个
+            var oDiv = document.querySelector('#div');
+            alert(oDiv);
+
+            // 选择多个，类似于样式的写法
+            var aLi = document.querySelectorAll('.list li');
+            alert(aLi.length);      // 弹出结果为：8
+        }
+        
+    </script>
+</head>
+<body>
+    <div id="div">这是一个div元素</div>
+    <ul class="list">
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+        <li>6</li>
+        <li>7</li>
+        <li>8</li>
+    </ul>
+</body>
+</html>

@@ -5,17 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>闭包函数</title>
     <script>
-        function aa(b){
-            var a = 12;
+        // function aa(b){
+        //     var a = 12;
+        //     function bb(){
+        //         alert(a);
+        //         alert(b);
+        //     }
+        //     return bb;
+        // }
+
+        // var cc = aa(25);
+        // cc();
+
+        // 封闭函数简写
+        var wq = (function(n){
+            var b = 3;
             function bb(){
-                alert(a);
-                alert(b);
+                console.log(n);
+                
+                b++;
+                console.log(b);
             }
             return bb;
-        }
+        })(2);
 
-        var cc = aa(25);
-        cc();
+        wq();   // 2  4
+        wq();   // 2  5
     </script>
 </head>
 <body>

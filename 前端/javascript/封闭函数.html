@@ -16,8 +16,18 @@
             alert('hello world!');
         }
         
+        var aa = function(){
+            console.log("test01");
+        };
+        (function(){
+            var aa = function(){
+                console.log('test02');
+            }
+            aa();
+        })();
+        aa();
         // 只能放在函数的后面不能提前
-        calc();
+        // calc();
     </script>
 </head>
 <body>
