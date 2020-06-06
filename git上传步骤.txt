@@ -34,3 +34,7 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 可以通过如下命令进行代码合并【注：pull=fetch+merge]
 git pull --rebase origin master
 git push -u origin maste
+
+
+将git上面的项目下载到本地
+git clone git@github.com:adminwj1/-.git
