@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>元素中心点</title>
+    <style type="text/css">
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+            float: left;
+            margin: 30px;
+            transition: all 500ms ease; /* 设置动画效果 */
+           
+        }
+
+        div:nth-child(1){
+            transform-origin: left center; /* 设置元素的中心点位置 */
+        }
+
+        div:nth-child(2){
+            transform-origin: left top;
+        }
+
+        div:nth-child(3){
+            transform-origin: 50px 50px; /* 以数值的形式设置中心点位置 */
+        }
+
+        div:hover{
+            transform: rotate(90deg); /* 设置旋转选 */
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+    <div></div>
+    <div></div>
+</body>
+</html>

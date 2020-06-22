@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 300px;
+            height: 300px;
+            margin: 50px auto 0;
+            background-color: gold;
+            text-align: center;
+            line-height: 300px;
+            font-size: 50px;
+            transition: all 500ms ease;
+            transform-style: preserve-3d;
+            transform: perspective(800px) rotateY(0deg);
+            backface-visibility: hidden; /* 旋转后背面是否可见 */
+        }
+
+        body:hover .box{
+            transform: rotateY(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box">div元素</div>
+</body>
+</html>

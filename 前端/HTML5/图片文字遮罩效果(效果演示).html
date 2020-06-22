@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 300px;
+
+            margin: 50px auto 0;
+            border: 1px solid #000;
+            position: relative;
+            overflow: hidden;
+            
+        }
+
+        .box img{
+            width: 200px;
+            height: 300px;
+            
+        }
+
+        .box .pic_info{
+            width: 200px;
+            height: 200px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            position: absolute;
+            transition: all 500ms cubic-bezier(1.000, 0.000, 0.025, 1.000);
+            top: 300px;
+        }
+
+        /* .box .pic_info p{
+            margin: 20px;
+            line-height: 30px;            
+        } */
+
+        .box:hover .pic_info{
+            top: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <img src="../HTML/image/location_bg.jpg" alt="">
+        <div class="pic_info">图片说明：这是一个风景图</div>
+    </div>
+</body>
+</html>

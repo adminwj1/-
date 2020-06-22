@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transition运动曲线</title>
+    <style>
+        div{
+            width: 50px;
+            height: 50px;
+            background-color: gold;
+            margin-bottom: 20px;
+        }
+
+        div:nth-child(1){
+            /* 匀速运动 */
+            transition: all 1s linear;
+        }
+
+        div:nth-child(2){
+            /* 开始和结束慢速，中间快速 */
+            transition: all 1s ease;
+        }
+
+        div:nth-child(3){
+            /* 开始时慢速，结束时快速 */
+            transition: all 1s ease-in;
+        }
+
+        div:nth-child(4){
+            /* 开始时快速，结束时慢速 */
+            transition: all 1s ease-out;
+        }
+
+        div:nth-child(5){
+            /* 开始和结束慢速，和ease差不多 */
+            transition: all 1s ease-in-out;
+        }
+
+        div:nth-child(6){
+            transition: all 1s cubic-bezier(1.000, 0.000, 0.025, 1.000);
+        }
+
+        div:hover{
+            width: 600px;
+
+        }
+    </style>
+</head>
+<body>
+    <div>linear</div>
+    <div>ease</div>
+    <div>ease-in</div>
+    <div>ease-out</div>
+    <div>ease-in-out</div>
+    <div>cubic-bezier</div>
+</body>
+</html>

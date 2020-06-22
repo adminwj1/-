@@ -1,0 +1,451 @@
+body{
+    font-family: 'Microsoft Yahei';
+    color: #666;
+    font-size: 12px;
+}
+/* 顶部状态条样式 */
+.header_con{
+    height: 29px;
+    background-color: #f7f7f7;
+    border-bottom: 1px solid #ddd;
+}
+
+.header{
+    width: 1200px;
+    height: 29px;
+    margin: 0 auto;
+}
+
+.welcome{
+    font: 12px/29px 'Microsoft Yahei';
+    color: #666;
+}
+
+.user_login_link, .user_welcome, .user_shopping{
+    height: 29px;
+    line-height: 29px;
+
+}
+
+.user_login_link a, .user_shopping a{
+    color: #666;
+}
+
+.user_login_link span, .user_shopping span{
+    margin: 0 15px;
+    color: #cecece;
+}
+
+.user_login_link a:hover, .user_shopping a:hover{
+   color: #ff8800;
+}
+
+.user_welcome{
+    display: none;
+}
+.user_welcome em{
+    color: #ff8800;
+}
+
+
+
+/* 搜索、logo、购物车样式 */
+.logo_bar{
+    width: 1200px;
+    height: 115px;
+    /* background-color: gold; */
+    margin: 0 auto;
+}
+.logo{
+    width: 151px;
+    height: 59px;
+    margin: 29px 0 0 17px;
+}
+
+.search{
+    width: 616px;
+    height: 38px;
+    border:solid 1px #17ab40;
+    margin: 34px 0 0 123px;
+    background: url(../image/icons.png) 10px -338px no-repeat;
+}
+
+.search .input_text{
+    width: 470px;
+    height: 36px;
+    border: 0;
+    /* margin-top: 5px; */
+    margin-left: 37px;
+    outline: none;
+}
+
+.input_btn{
+    width: 100px;
+    height: 38px;
+    line-height: 38px;
+    border: 0;
+    font-size: 14px;
+    color: #fff;
+    font-family: 'Microsoft Yahei';
+    background-color: #17ab40;
+    cursor: pointer;
+}
+
+.chart{
+    width: 200px;
+    height: 40px;
+    margin-top: 34px;
+    /* border: 1px solid green; */
+}
+.chart a{
+    width: 158px;
+    height: 39px;
+    border: solid 1px #ddd;
+    font: 14px/38px 'Microsoft Yahei';
+    color: #37ab40;
+    /* text-align: right; */
+    text-indent: 56px;
+    background: url(../image/icons.png) 14px -299px no-repeat #f7f7f7;
+}
+ .chart span{
+    width: 40px;
+    height: 40px;
+    background-color: #f80;
+   font: bold 18px/40px 'Microsoft Yahei';
+   color: #fff;
+   text-align: center;
+} 
+
+.sub_men_con{
+    height: 40px;
+    border-bottom: 2px solid #37ab40;
+}
+
+.sub_men{
+    width: 1200px;
+    height: 40px;
+    margin: 0 auto;
+}
+
+.sub_men h1{
+    width: 200px;
+    height: 40px;
+    background-color: #37ab40;
+    font: 14px/40px 'Microsoft Yahei';
+    color: #fff;
+    text-align: center;
+}
+
+.sub_men ul{ /*清除ul中多余的内容*/
+    overflow: hidden;
+}
+
+.sub_men li{
+    float: left;
+    height: 14px;
+    padding: 0 25px;
+    border-left: 1px solid #666;
+    margin-left: -1px;
+    margin-top: 12px;
+}
+
+.sub_men li a{
+    font: 14px/14px 'Microsoft Yahei';
+    color: #666;
+}
+
+.sub_men li a:hover{
+    color: orange;
+}
+
+
+
+/* 左侧菜单样式 */
+.center_con{
+    width: 1200px;
+    height: 270px;
+
+    margin: 0 auto;
+}
+
+.main_menu{
+    width: 200px;
+    height: 270px;
+    /* background-color: gold; */
+    overflow: hidden;
+
+}
+
+.main_menu li{
+    width: 198px;
+    height: 44px;
+    border: 1px solid#eee;
+    margin-top: -1px;
+    background: url(../image/icons.png) 166px  bottom no-repeat;
+
+}
+
+.main_menu li a{
+    /* 这样设置是为了li标签看起来整块都可以都可以超链接优化体验的 */
+    display: block;
+    width: 198px;
+    height: 44px;
+    text-indent: 71px;
+    font: 14px/44px 'Microsoft Yahei';
+    color: #333;
+    background: url(../image/icons.png) 33px  0 no-repeat;
+
+}
+
+.main_menu li a:hover{
+    color: orange;
+}
+
+.main_menu li .fruit{
+    background-position: 26px 0px;
+}
+
+
+.main_menu li .seafood{
+    background-position: 26px -44px;
+}
+
+.main_menu li .meat{
+    background-position: 26px -88px;
+}
+
+.main_menu li .egg{
+    background-position: 26px -132px;
+}
+
+.main_menu li .vegetable{
+    background-position: 26px -176px;
+}
+
+.main_menu li .ice{
+    background-position: 26px -220px;    
+}
+
+
+/* 幻灯片样式 */
+
+.slide_con{
+    width: 760px;
+    height: 270px;
+    position: relative;
+}
+
+#prev, #next{
+    width: 15px;
+    height: 25px;
+    position: absolute;
+    left: 11px;
+    top: 122px;
+    background: url(../image/icons.png) -1px  -389px no-repeat;
+    cursor: pointer;
+    z-index: 100;
+}
+
+#next{
+    left: 732px;
+    background: url(../image/icons.png) -1px  -428px no-repeat;
+    cursor: pointer;
+}
+
+.points{
+    position: absolute;
+    width: 100%;
+    height: 11px;
+    left: 0;
+    bottom: 9px;
+    text-align: center;
+    font-size: 0;
+    cursor: pointer;
+    z-index: 100;
+}
+
+/* .points li{
+    width: 11px;
+    height: 11px;
+    display: inline-block;
+    background-color: #9f9f9f;
+    margin: 0 5px;
+    border-radius: 50%;
+    
+} */
+
+.print{
+    width: 11px;
+    height: 11px;
+    display: inline-block;
+    background-color: #9f9f9f;
+    margin: 0 5px;
+    border-radius: 50%;
+    
+}
+
+.print.actve{
+    background-color: red;
+}
+
+/* .points .active{
+    background-color: #cecece;
+} */
+
+
+.adv{
+    width: 240px;
+    height: 270px;
+}
+.adv a{
+    float: left;
+    width: 240px;
+    height: 135px;
+
+}
+
+.adv a img{
+    display: block;
+}
+
+
+.common_model{
+    width: 1200px;
+    height: 340px;
+    margin: 18px auto 0;
+}
+
+.common_model .common_title{
+    height: 38px;
+    border-bottom: 2px solid #42ad46;
+}
+
+.common_title h3{
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 38px;
+    color: #17ab40;
+}
+
+.common_title ul{
+    height: 12px;
+    margin: 13px 0 0 20px;
+}
+
+.common_title li{
+    margin: 0 10px;
+    float: left;
+}
+
+.common_title li a{
+    height: 12px;
+    color: #666;
+    line-height: 12px;
+
+}
+
+.common_title li a:hover, .common_model .common_title .more:hover{
+    color: orange;
+}
+
+.common_model .common_title .more{
+    height: 38px;
+    line-height: 38px;
+    color: #666;
+
+}
+
+.common_model .common_goods_list{
+    width: 1200px;
+    height: 300px;
+}
+
+ .common_goods_list .goods_banner{
+    width: 200px;
+    height: 300px;
+
+}
+
+.goods_banner .goods_list{
+    width: 1000px;
+    height: 300px;
+    
+}
+
+.goods_list li{
+    width: 249px;
+    height: 299px;
+    border-right: 1px solid #ededed;
+    border-bottom: 1px solid #ededed;
+    float: left;
+}
+
+.goods_list li h4{
+    height: 52px;
+    font: 14px/52px 'Microsoft Yahei';
+    color: #666;
+    text-align: center;
+}
+
+.goods_list li a{
+    display: block;
+    width: 180px;
+    height: 180px;
+    margin: 0 auto;
+}
+
+.goods_list li p{
+    height: 52px;
+    color: #c40000;
+    font: bold 20px/52px 'Microsoft Yahei';
+    text-align: center;
+}
+
+/* 鼠标放在图片上有响应效果 通过改变尺寸大小*/
+.goods_list li:hover{
+    width: 248px;
+    height: 298px;
+    border: 1px solid #f80;
+}
+
+
+/* 底部版权信息 */
+
+.footer{
+    height: 145px;
+    border-top: 2px solid #42ad46;
+    margin-top: 30px;
+}
+.footer .links{
+    margin-top: 40px;
+    text-align: center;
+}
+
+.footer .links a{
+    color: #4e4e4e;
+}
+
+.footer .links span{
+    color: #4e4e4e;
+    margin: 0 10px;
+}
+
+.footer p{
+    text-align: center;
+    line-height: 27px;
+    color: #4e4e4e;
+    margin-top: 10px;
+}
+
+.footer .links a:hover{
+    color: orange;
+}
+
+.item{
+    /* display: inline-block; */
+    /* display: none; */
+    position: absolute;
+}
+.item.actve{
+    z-index: 10;
+}

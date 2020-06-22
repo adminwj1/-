@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=lo, initial-scale=1.0">
+    <title>loading动画</title>
+    <style>
+        .box{
+            width: 300px;
+            height: 120px;
+            border: 1px solid #000;
+            margin: 200px auto 0;
+        }
+
+        .box div{
+            width: 30px;
+            height: 70px;
+            float: left;
+            background-color: gold;
+            margin: 15px;
+            border-radius: 10px;
+        }
+
+        .box p{
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        .box div:nth-child(1){
+            background-color: red;
+            animation: loading 500ms ease 0s infinite alternate;
+        }
+
+        .box div:nth-child(2){
+            background-color: pink;
+            animation: loading 500ms ease 100ms infinite alternate;
+        }
+
+        .box div:nth-child(3){
+            background-color: green;
+            animation: loading 500ms ease 200ms infinite alternate;
+        }
+
+        .box div:nth-child(4){
+            background-color: blue;
+            animation: loading 500ms ease 300ms infinite alternate;
+        }
+
+        .box div:nth-child(5){
+            background-color: greenyellow;
+            animation: loading 500ms ease 400ms infinite alternate;
+        }
+
+        /* 定义关键字动画 */
+        @keyframes loading {
+            from{
+                transform: scaleY(1);/* y轴的缩放*/
+            }
+
+            to{
+                transform: scaleY(0.5);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <p>Loging...</p>
+    </div>
+</body>
+</html>

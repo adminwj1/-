@@ -463,7 +463,135 @@ HTML5/CSS3
 		
 		
 		
+	CSS圆角-阴影-透明度
+
+
+
+
+
+
+
+	CSS3-transiton动画
+		1、transition-property 设置过度属性，比如：width  height  background-color
+		2、transition-duration 设置过度的时间，比如：1s 500ms
+		3、transition-timing-function  设置过度的运动方式
+			. linear 匀速
+			. ease 开始和结束慢速
+			. ease-in 开始时慢速
+			. ease-out	结束时慢速
+			. ease-in-out 开始和结束时慢速
+			. cubic-bezier(n,n,n,n)
+				比如：cubic-bezier(0.845, -0.375, 0.215, 1.335)
+				曲线设置网站：https://matthewlein.com/ceaser/
+		4、transition-delay 设置动画的延迟
+		5、transition: property duration timing-function delay 同时设置四个属性
+		5、transition: all 500ms ease;  不管那个属性都进行过度
+		代码：transition动画效果
+			<head>
+				<title>transition动画</title>
+				<style type="text/css">
+					.box{
+						width: 100px;
+						height: 100px;
+						background-color: gold;
+						/* 设置宽度的动画效果 */
+						transition: width 500ms ease 1s, 
+						/* 设置高度的动画效果 */
+						height 500ms ease 500ms, 
+						/* 设置背景颜色的动画效果 */
+						background-color 500ms ease 2s, 
+						/* 设置边框的动画效果 */
+						border-radius 500ms ease 1500ms;
+					}
+					.box:hover{
+						width: 500px;
+						height: 300px;
+						background-color: #f40;
+						/* 最后变成圆角 */
+						border-radius: 50px;
+					}
+				</style>
+			</head>
+			<body>
+				<div class="box"></div>
+			</body>
 		
+		
+		代码：transition曲线动画效果
+			<head>
+				<title>transition运动曲线</title>
+				<style>
+					div{
+						width: 50px;
+						height: 50px;
+						background-color: gold;
+						margin-bottom: 20px;
+					}
+
+					div:nth-child(1){
+						/* 匀速运动 */
+						transition: all 1s linear;
+					}
+
+					div:nth-child(2){
+						/* 开始和结束慢速，中间快速 */
+						transition: all 1s ease;
+					}
+
+					div:nth-child(3){
+						/* 开始时慢速，结束时快速 */
+						transition: all 1s ease-in;
+					}
+
+					div:nth-child(4){
+						/* 开始时快速，结束时慢速 */
+						transition: all 1s ease-out;
+					}
+
+					div:nth-child(5){
+						/* 开始和结束慢速，和ease差不多 */
+						transition: all 1s ease-in-out;
+					}
+
+					div:nth-child(6){
+						transition: all 1s cubic-bezier(1.000, 0.000, 0.025, 1.000);
+					}
+
+					div:hover{
+						width: 600px;
+
+					}
+				</style>
+			</head>
+			<body>
+				<div>linear</div>
+				<div>ease</div>
+				<div>ease-in</div>
+				<div>ease-out</div>
+				<div>ease-in-out</div>
+				<div>cubic-bezier</div>
+			</body>
+		
+		
+	CSS3 transform变换
+		1、translate(x,y) 设置盒子位移
+		2、scale(x,y) 设置盒子缩放
+		3、rotate(deg) 设置盒子旋转，角度值
+		4、skew(x-angle, y-angle) 设置盒子斜切
+		
+		
+		
+	animation动画
+		定义动画：
+			1、@keyframes	定义关键帧动画
+			2、
+
+
+
+
+
+
+	
 		
 		
 JavaScript：

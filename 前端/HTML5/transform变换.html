@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transform变换</title>
+    <style>
+        .box{
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+            margin: 50px auto 0;
+            transition: all 1s ease;
+        }
+
+        .box:hover{
+            /* 盒子位移 */
+            transform: translate(100px,100px);
+        }
+
+        .box2{
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+            margin: 50px auto 0;
+            transition: all 1s ease;
+        }
+
+        .box2:hover{
+            /* 盒子旋转 */
+            transform: rotate(360deg);
+        }
+
+        .box3{
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+            margin: 50px auto 0;
+            transition: all 1s ease;
+        }
+
+        .box3:hover{
+            /* 盒子缩放 */
+            transform: scale(0.5, 0.2);
+        }
+
+        .box4{
+            width: 200px;
+            height: 200px;
+            background-color: gold;
+            margin: 50px auto 0;
+            transition: all 1s ease;
+        }
+
+        .box4:hover{
+            /* 盒子斜切 */
+            transform: skew(0deg,45deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="box"></div>
+    <div class="box2"></div>
+    <div class="box3"></div>
+    <div class="box4"></div>
+</body>
+</html>
