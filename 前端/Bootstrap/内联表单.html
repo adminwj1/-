@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./css/bootstrap.css"> 
+
+    </head>
+    <title>内联表单</title>
+    <body>
+        <form class="form-inline">
+            <div class="form-group">
+              <label for="exampleInputName2">Name</label>
+              <input type="text" class="form-control" id="exampleInputName2" placeholder="Jane Doe">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail2">Email</label>
+              <input type="email" class="form-control" id="exampleInputEmail2" placeholder="jane.doe@example.com">
+            </div>
+            <button type="submit" class="btn btn-default">Send invitation</button>
+          </form>
+
+          <br>
+
+          <form action="" class="form-inline">
+              <div class="form-group">
+                  <label for="Email3" class="sr-only">Email address</label>
+                  <input type="email" name="" id="Email3" class="form-control" placeholder="Email">
+              </div>
+
+              <div class="form-group">
+                <label for="Passwd" class="sr-only">Passwd</label>
+                <input type="passwd" name="" id="Passwd" class="form-control" placeholder="Password">
+            </div>
+
+            <div class="chekbox">
+                <label>
+                    <input type="checkbox"> Remember me
+                </label>
+            </div>
+            <button type="submit" class="btn btn-primary">Sign in</button>
+          </form>
+
+          <br>
+
+          <form class="form-inline">
+            <div class="form-group">
+              <label class="sr-only" for="exampleInputAmount">Amount (in dollars)</label>
+              <div class="input-group">
+                <div class="input-group-addon">$</div>
+                <input type="text" class="form-control" id="exampleInputAmount" placeholder="Amount">
+                <div class="input-group-addon">.00</div>
+              </div>
+            </div>
+            <button type="submit" class="btn btn-primary">Transfer cash</button>
+          </form>
+    </body>
+</html>

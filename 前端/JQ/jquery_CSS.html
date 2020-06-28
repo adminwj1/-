@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery_CSS</title>
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script>
+        // addClass 增加class
+        $(function(){
+            $('#b1').click(function(){
+                $('#d').addClass('pink');
+            });
+        });
+
+        // removeClass 删除class
+        $(function(){
+            $('#b2').click(function(){
+                $('#d').removeClass('pink');
+            });
+        });
+
+        // toggleClass 切换class，这里的切换，指得是：存在删除，不存在添加
+        $(function(){
+            $('#b3').click(function(){
+                $('#d').toggleClass('back');
+            });
+        });
+
+        // css函数
+        $(function(){
+            $('#b4').click(function(){
+                $('#d2').css("background-color","pink");
+            });
+            $('#b5').click(function(){
+                $('#d3').css({"background-color":"green","color":"#fff"});
+            });
+        });
+
+        
+    </script>
+    <style>
+        .pink{
+            background-color: pink;
+        }
+
+        .back{
+            background-color: green;
+        }
+    </style>
+</head>
+<body>
+    <button id='b1'>增加背景色</button>
+    <button id='b2'>删除背景色</button>
+    <button id='b3'>切换背景色</button>
+    <br>
+    <br>
+    <button id='b4'>设置单一样式</button>
+    <button id='b5'>设置多种样式</button>
+    <div id="d">
+        Hello JQuery
+    </div>
+
+    <div id="d2">
+        单一样式，只设置背景颜色
+    </div>
+
+    <div id="d3">
+        多种样式，不仅设置背景色，还设置字体颜色
+    </div>
+</body>
+</html>

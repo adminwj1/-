@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery常用方法01</title>
+    <script src="./jquery-3.5.1.min.js"></script>
+    <script>
+        $(function(){
+            // click()事件监听
+            $("#b1").click(function(){
+                $('#d').hide();
+                alert("点击了按钮");
+            });
+            $('#b2').click(function(){
+                $('#d').show();
+            });
+        });
+    </script>
+</head>
+<body>
+    <button id="b1">隐藏div</button>
+    <button id="b2">显示div</button>
+    <br>
+    <br>
+    <div id="d">这是一个div</div>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>jquery常用方法02</title>
+    <script src="jquery-3.5.1.min.js"></script>
+    <script>
+        // value取值
+        // $(function(){
+        //     $('#b1').click(function(){
+        //         alert($('#input1').val());
+        //     });
+        // });
+
+        // html() 获取元素内容,如果有子元素，保留标签。会将子元素和子元素内容显示出来
+        // $(function(){
+        //     $('#b1').click(function(){
+        //         alert($('#d1').html());
+        //     });
+        // });
+
+        // text() 获取元素内容,如果有子元素，不包含标签
+        $(function(){
+            $('#b1').click(function(){
+                alert($('#d1').text());
+            });
+        });
+    </script>
+</head>
+<body>
+    <!-- <button id="b1">取值</button>
+    <input type="text" id="input1" value="默认值">
+    <br> -->
+
+    <button id="b1">获取文本内容</button>
+    <br>
+    <br>
+    <div id="d1">
+        这是div的内容
+        <span>这是div里面的span</span>
+    </div>
+    
+</body>
+</html>
