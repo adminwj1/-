@@ -15,7 +15,7 @@ class Example(QWidget):
         self.setToolTip('This is a <b>QWidget</b> widget')  # 主窗口也显示提示
         # 创建一个PushButton并为他设置一个tooltip
         btn = QPushButton('Button', self)
-        btn.setToolTip('This is a <b>QWidget</b> widget')
+        btn.setToolTip('This is a <b>QWidget</b> widget_tow')
         # btn,sizeHint() 显示按钮为默认尺寸
         btn.resize(btn.sizeHint())
         btn.move(50, 50)    # x和y轴的位置
